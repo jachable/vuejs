@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p>{{ message.split('').reverse('').join('') }}</p>
+        <p>El número es: {{ numero }}</p>
+        <p>{{isActivo ? 'Activado' : 'Desactivado'}}</p>
+        
+        <div>
+            <h1>{{entrada}}</h1>
+            Ejemplo: <input type="text" name="" id="" v-model="entrada">
+            <pre>{{$data}}</pre>
+        </div>
+        <div>
+            <ul>
+                <li v-for="user in usuarios">{{user.nombre}}</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let app = new Vue({
+            el:"#app"
+            ,data: {
+                message: 'Hola Mundo!'
+                ,numero: 20
+                ,isActivo: true
+                ,usuarios: [
+                    {"nombre": "MiNombre"}
+                    ,{"nombre": "OtroNombre"}
+                ]
+                ,entrada: 'hola'
+            }
+        });
+    </script>
+</body>
+</html>
